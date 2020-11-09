@@ -1,10 +1,5 @@
-language: generic
-sudo: required
-services:
-  - docker
-
-before_install:
-  - doceker build -t naruchitwates/my-docker-react -f Dockerfile.dev . 
-
-script:
-  - docker run -e CI=true -t naruchitwates/my-docker-react npm run test -- --coverage
+language: objective-c  #1
+osx_image: xcode6.4 #2
+xcode_project: MovingHelper.xcodeproj #3
+xcode_scheme: MovingHelper #4
+xcode_sdk: iphonesimulator8.4 #5
