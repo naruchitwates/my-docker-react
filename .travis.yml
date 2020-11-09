@@ -1,3 +1,4 @@
+language: generic
 sudo: required
 services:
     - docker
@@ -6,4 +7,4 @@ before_install:
     - doceker build -t naruchitwates/my-docker-react -f Dockerfile.dev . 
 
 script:
-    - docker run -t naruchitwates/my-docker-react npm run test -- --coverage
+    - docker run -e CI=true -t naruchitwates/my-docker-react npm run test -- --coverage
