@@ -8,3 +8,16 @@ before_install:
 
 script:
  - docker run -e CI=true -t naruchitwates/my-docker-react npm run test -- --coverage
+
+deploy:
+ provider: elasticbranstalk
+ region: "ap-southeast-1"
+ app: "my-docker-react"
+ env: "MyDockerReact-env"
+ bucket_name: "elasticbeanstalk-ap-southeast-1-518883100804"
+ bucket_path: "my-docker-react"
+ on:
+  branch: master
+access_key_id: "$AWS_ACCESS_KEY"
+secret_access_key:
+ secure: "$AWS_SECRET_KEY"
