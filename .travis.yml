@@ -11,6 +11,7 @@ script:
 
 deploy:
  provider: elasticbranstalk
+ skip_cleanup: true
  region: "ap-southeast-1"
  app: "my-docker-react"
  env: "MyDockerReact-env"
